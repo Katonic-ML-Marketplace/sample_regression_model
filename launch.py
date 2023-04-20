@@ -8,7 +8,7 @@ import os
 def loadmodel(logger):
     """Get model from cloud object storage."""
     logger.info("loading model")
-    TRAINED_MODEL_FILEPATH = f"regression.pickle"
+    TRAINED_MODEL_FILEPATH = f"regression.pkl"
     with open(TRAINED_MODEL_FILEPATH , 'rb') as f:
         clfdt = pickle.load(f)
     return clfdt  
