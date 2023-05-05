@@ -6,19 +6,19 @@ from typing import Any, Union,Dict
 import os
 
 def loadmodel(logger):
-    """Get model from cloud object storage."""
+    """Get the model"""
     logger.info("loading model")
     TRAINED_MODEL_FILEPATH = f"regression.pickle"
     with open(TRAINED_MODEL_FILEPATH , 'rb') as f:
         clfdt = pickle.load(f)
     return clfdt  
 
-def preprocessing(df:np.ndarray,logger):
+def preprocessing(df,logger):
     """ Applies preprocessing techniques to the raw data"""
     logger.info("no preprocessing")
     return False
     
-def predict(features: np.ndarray,model:Any,logger) -> Dict[str, str]:
+def predict(features,model,logger) -> Dict[str, str]:
     """Predicts the results for the given inputs"""
     logger.info("model prediction")
     prediction = model.predict(features)
